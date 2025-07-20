@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Neon Login Page</title>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles"></script>
+    <div id="tsparticles" class="absolute inset-0 -z-10"></div>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Poppins", "sans-serif"],
+            },
+            colors: {
+              glass: "rgba(255, 255, 255, 0.1)",
+            },
+          },
+        },
+      };
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+    <style>
+      .glass {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 0 30px rgba(255, 0, 255, 0.4);
+      }
+
+      @keyframes fade-in-up {
+        0% {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .animate-fade-in-up {
+        animation: fade-in-up 0.8s ease-out both;
+      }
+    </style>
+  </head>
+
+  <body class="min-h-screen bg-gradient-to-tr from-indigo-900 via-purple-900 to-pink-900 flex items-center justify-center font-sans text-white px-4">
+
+    <div class="w-full max-w-6xl grid md:grid-cols-2 gap-10 items-center">
+
+      <!-- Left: Login Box -->
+      <div class="glass p-10 rounded-3xl animate-fade-in-up">
+        <h2 class="text-4xl font-bold mb-8 text-center">Welcome Back!</h2>
+        <form class="space-y-6">
+          <div>
+            <label class="block text-lg mb-1">Email</label>
+            <input type="email" placeholder="Enter your email" class="w-full px-4 py-3 rounded-lg bg-white/10 text-white placeholder-white focus:outline-none focus:ring-2 focus:ring-pink-400" />
+          </div>
+          <div>
+            <label class="block text-lg mb-1">Password</label>
+            <input type="password" placeholder="••••••••" class="w-full px-4 py-3 rounded-lg bg-white/10 text-white placeholder-white focus:outline-none focus:ring-2 focus:ring-pink-400" />
+          </div>
+          <button type="submit" class="w-full py-3 bg-gradient-to-r from-pink-500 to-purple-500 text-white font-bold rounded-lg shadow-lg hover:scale-105 transition duration-300 ">
+            Log in
+          </button>
+        </form>
+        <p class="mt-6 text-center text-sm">
+          Don't have an account?
+          <a href="#" class="text-pink-400 hover:underline">Sign up</a>
+        </p>
+      </div>
+
+      <!-- Right: Robot Animation -->
+      <div class="flex justify-center items-center">
+        <lottie-player
+          src="https://assets10.lottiefiles.com/packages/lf20_kyu7xb1v.json"
+          background="transparent"
+          speed="1"
+          style="width: 100%; max-width: 400px; height: 400px"
+          loop
+          autoplay>
+        </lottie-player>
+      </div>
+    </div>
+  </body>
+</html>
